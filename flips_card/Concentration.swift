@@ -34,35 +34,16 @@ class Concentration {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): chosen index not in the cards.")
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
-                if cards[matchIndex].identifier == cards[index].identifier {
+                if cards[matchIndex] == cards[index] {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
                 cards[index].isFaceUp = true
-                // indexOfOneAndOnlyFaceUpCard = nil
             }else {
-                // 此處在 set 時，就已經完成了
-                
-//                for flipDownIndex in cards.indices {
-//                    // 新的牌以外的牌，翻回去背面。
-//                    cards[flipDownIndex].isFaceUp = false
-//                }
-//                // 新的牌一樣翻成正面，以及只有單一張牌
-//                cards[index].isFaceUp = true
-                
-                // 所以是唯一一張牌
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
     }
-    
-//    func chooseCard(at index:Int){
-//        if cards[index].isFaceUp{
-//            cards[index].isFaceUp = false
-//        }else {
-//            cards[index].isFaceUp = true
-//        }
-//    }
     
     init(numberOfPairsCards: Int) {
         assert(numberOfPairsCards > 0, "Concentration.init(at: \(numberOfPairsCards)): you must have at least one pair of cards.")
