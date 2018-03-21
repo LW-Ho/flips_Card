@@ -64,7 +64,8 @@ class ViewController: UIViewController {
                     game.chooseCard(at: cardNumber)
                     updateViewFromModel()
                 }
-
+            } else {
+                updateViewFromModel()
             }
 
         }else
@@ -80,6 +81,11 @@ class ViewController: UIViewController {
             if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: UIControlState.normal)
                 button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                if card.isMatched {
+                    button.setTitle(emoji(for: card), for: UIControlState.normal)
+                    button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5)
+                    button.isEnabled = false
+                }
             }else {
                 button.isEnabled = true
                 button.setTitle("", for: UIControlState.normal)
