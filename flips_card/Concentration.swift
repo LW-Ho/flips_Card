@@ -11,9 +11,9 @@ import Foundation
 class Concentration {
     //var cards = Array<Card>()
     private(set) var cards = [Card]();
-
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
+            //return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
             var foundIndex: Int?
             for index in cards.indices {
                 if cards[index].isFaceUp {
@@ -30,6 +30,8 @@ class Concentration {
         }
     }
     
+    
+    
     func chooseCard(at index:Int) {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): chosen index not in the cards.")
         if !cards[index].isMatched {
@@ -38,10 +40,16 @@ class Concentration {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
-                cards[index].isFaceUp = true
+                cards[index].isFaceUp = !cards[index].isFaceUp
             }else {
                 indexOfOneAndOnlyFaceUpCard = index
             }
+        }
+    }
+    
+    func chooseSameCard(at index:Int) {
+        if cards[index].isFaceUp {
+            cards[index].isFaceUp = !cards[index].isFaceUp
         }
     }
     
@@ -55,6 +63,30 @@ class Concentration {
             cards += [card, card]
         }
         // TODO: Shuffle the card.
+        cards.shuffle()
     }
+}
 
+extension Collection {
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
+    }
+}
+
+extension MutableCollection {
+    mutating func shuffle() {
+        
+        // Shuffle logic retrieved from:
+        // https://stackoverflow.com/questions/37843647/shuffle-array-swift-3/37843901
+        
+        // Empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        // Shuffle them
+        for i in indices.dropLast() {
+            let diff = distance(from: i, to: endIndex)
+            let j = index(i, offsetBy: numericCast(arc4random_uniform(numericCast(diff))))
+            swapAt(i, j)
+        }
+    }
 }
