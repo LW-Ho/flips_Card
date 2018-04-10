@@ -136,7 +136,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-hA-6UB">
-                                <rect key="frame" x="87" y="730" width="200" height="48"/>
+                                <rect key="frame" x="121.00000000000001" y="730" width="132.33333333333337" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -153,12 +153,12 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vA6-LW-RSd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5d4-Ee-Ioa"/>
-                            <constraint firstItem="9cd-hA-6UB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="5ha-TE-I0f"/>
+                            <constraint firstItem="9cd-hA-6UB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5ha-TE-I0f"/>
                             <constraint firstItem="9cd-hA-6UB" firstAttribute="top" secondItem="dly-Gv-E8c" secondAttribute="bottom" constant="8" symbolic="YES" id="Daa-SS-2bf"/>
                             <constraint firstItem="dly-Gv-E8c" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vA6-LW-RSd" secondAttribute="bottom" constant="8" symbolic="YES" id="GHm-Ix-3DK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dly-Gv-E8c" secondAttribute="trailing" constant="16" id="Jpy-lN-rtf"/>
                             <constraint firstItem="9cd-hA-6UB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ngs-43-wpq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9cd-hA-6UB" secondAttribute="trailing" constant="88" id="Xk5-pw-wC5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9cd-hA-6UB" secondAttribute="trailing" id="Xk5-pw-wC5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vA6-LW-RSd" secondAttribute="trailing" constant="16" id="a7T-0K-r2k"/>
                             <constraint firstItem="9cd-hA-6UB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vA6-LW-RSd" secondAttribute="bottom" constant="8" symbolic="YES" id="f85-dH-R0V"/>
                             <constraint firstItem="dly-Gv-E8c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gz4-s6-3x9"/>

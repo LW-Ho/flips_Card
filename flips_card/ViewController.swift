@@ -129,6 +129,8 @@ class ViewController: UIViewController {
 }
 
 extension Int {
+    // return Int(arc4random_uniform(UInt32(self)))
+    // XXX.arc4Random, then can use the extension probity.
     var arc4Random: Int {
         switch self {
         case 1...Int.max:
