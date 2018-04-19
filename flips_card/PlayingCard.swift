@@ -32,10 +32,10 @@ PlayingCard:CustomStringConvertible {
     enum Rank:CustomStringConvertible {
         var description: String{
             switch self {
-                case .ace: return "A"
-                case .numeric(let pips): return "\(pips)"
-                case .face(let kind): return kind
-                default: return "?"
+            case .ace: return "A"
+            case .numeric(let pips): return "\(pips)"
+            case .face(let kind): return kind
+            default: return "?"
             }
         }
         
@@ -45,12 +45,12 @@ PlayingCard:CustomStringConvertible {
         
         var order:Int {
             switch self{
-                case .ace: return 1
-                case .numeric(let pips): return pips
-                case .face(let kind) where kind == "J": return 11
-                case .face(let kind) where kind == "Q": return 12
-                case .face(let kind) where kind == "K": return 13
-                default: return 0
+            case .ace: return 1
+            case .numeric(let pips): return pips
+            case .face(let kind) where kind == "J": return 11
+            case .face(let kind) where kind == "Q": return 12
+            case .face(let kind) where kind == "K": return 13
+            default: return 0
             }
         }
         
@@ -61,6 +61,7 @@ PlayingCard:CustomStringConvertible {
             }
             allRanks += [Rank.face("J"), .face("Q"), .face("K")]
             return allRanks
-         }
+        }
     }
 }
+
