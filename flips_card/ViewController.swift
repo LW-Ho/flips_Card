@@ -10,18 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var deck = PlayingCardDeck()
+    //var deck = PlayingCardDeck()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for _ in 1...10 {
-            if let card = deck.draw() {
-                print ("\(card)");
-            } else {
-                print ("Deck draw Error ... ")
-            }
-        }
+        createDeckCard()
     }
 
     //var game = Concentration(numberOfPairsCards: 3)
@@ -88,48 +81,96 @@ class ViewController: UIViewController {
         }
     }
     
+//    private func updateViewFromModel() {
+//        for index in cardButtons.indices {
+//            let button = cardButtons[index]
+//            let card = game.cards[index]
+//            if card.isFaceUp {
+//                //button.setTitle("\(String(describing: deck.draw()))", for: UIControlState.normal)
+//                //button.setTitle(emoji(for: card), for: UIControlState.normal)
+//                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//                if card.isMatched {
+//                    //button.setTitle(emoji(for: card), for: UIControlState.normal)
+//                    button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5)
+//                    button.isEnabled = false
+//                }
+//            }else {
+//                button.isEnabled = true
+//                button.setTitle("", for: UIControlState.normal)
+//                button.backgroundColor = card.isMatched ?
+//                    #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5): #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+//                if button.backgroundColor == #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5) {
+//                    //button.setTitle(emoji(for: card), for: UIControlState.normal)
+//                    button.isEnabled = false
+//                }
+//            }
+//        }
+//    }
     private func updateViewFromModel() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp {
-                button.setTitle(emoji(for: card), for: UIControlState.normal)
+                button.setTitle("\(pokerFaceCard[index])", for: UIControlState.normal)
+                //button.setTitle(emoji(for: card), for: UIControlState.normal)
                 button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                if card.isMatched {
-                    button.setTitle(emoji(for: card), for: UIControlState.normal)
-                    button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5)
-                    button.isEnabled = false
-                }
-            }else {
-                button.isEnabled = true
+//                if card.isMatched {
+//                    //button.setTitle(emoji(for: card), for: UIControlState.normal)
+//                    button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5)
+//                    button.isEnabled = false
+//                }
+            } else {
                 button.setTitle("", for: UIControlState.normal)
-                button.backgroundColor = card.isMatched ?
-                    #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5): #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-                if button.backgroundColor == #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5) {
-                    button.setTitle(emoji(for: card), for: UIControlState.normal)
-                    button.isEnabled = false
-                }
+                button.backgroundColor =  #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
+//            }else {
+//                button.isEnabled = true
+//                button.setTitle("", for: UIControlState.normal)
+//                button.backgroundColor = card.isMatched ?
+//                    #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5): #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+//                if button.backgroundColor == #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0.5) {
+//                    //button.setTitle(emoji(for: card), for: UIControlState.normal)
+//                    button.isEnabled = false
+//                }
+//            }
         }
     }
     
-    //private var emojiChoices:Array<String> = ["🇹🇼","🇺🇸","🇬🇹","🇯🇵","🇬🇧","🇰🇷","🇦🇺","🇹🇭","🇲🇾","🇭🇰"]
-    private var emojiChoices = "🇹🇼🇺🇸🇬🇹🇯🇵🇬🇧🇰🇷🇦🇺🇹🇭🇲🇾🇭🇰"
+    private var emojiChoices:Array<String> = ["🇹🇼","🇺🇸","🇬🇹","🇯🇵","🇬🇧","🇰🇷","🇦🇺","🇹🇭","🇲🇾","🇭🇰"]
+    //private var emojiChoices = "🇹🇼🇺🇸🇬🇹🇯🇵🇬🇧🇰🇷🇦🇺🇹🇭🇲🇾🇭🇰"
+    private var pokerFaceCard:Array<String> = [] //新增array，去接手emoji角色。
+    private var pokerCards:[PlayingCard] = []
+    private var deck = PlayingCardDeck()
+    //private let pokercards = [PlayingCard]()
+    private func createDeckCard(){
+        //deck.draw()
+        for _ in 1...12 {
+            if let deckcard = deck.draw() {
+                pokerFaceCard.append(String(describing: deckcard))
+            }
+        }
+        print(pokerFaceCard)
+        print(pokerCards.count)
+        //print(emojiChoices)
+    }
     
     private var emoji = [Card:String] ()
-    
-    private func emoji(for card: Card) -> String {
-            if emojiChoices.count > 0, emoji[card] == nil{ // , == &&
-                let stringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4Random)
-                emoji[card] = String(emojiChoices.remove(at: stringIndex))
-            }
-//        if emoji[card.identifier] != nil {
-//            return emoji[card.identifier]!
-//        }else {  
-//            return "?"
+
+//    private func emoji(for card: Card) -> String {
+//        if pokerCards.count > 0 { //, emoji[card] == nil{ // , == &&
+//            let stringIndex = pokerCards.index(pokerCards.startIndex, offsetBy: pokerCards.count.arc4Random)
+//            emoji[card] = String(describing: pokerCards.remove(at: stringIndex))
 //        }
-        return  emoji[card] ?? "?"
-    }
+//        return  emoji[card] ?? "?"
+//    }
+    
+//    private func emoji(for card: Card) -> String {
+//            if emojiChoices.count > 0, emoji[card] == nil{ // , == &&
+//                let stringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4Random)
+//                emoji[card] = String(emojiChoices.remove(at: stringIndex))
+//            }
+//        return  emoji[card] ?? "?"
+//    }
     
     
     // for init of the game.
@@ -138,7 +179,8 @@ class ViewController: UIViewController {
         game = Concentration(numberOfPairsCards: (numberOfPairsOfCardsOnTable))
         updateViewFromModel()
         flipCounter = 0
-        emojiChoices = "🇹🇼🇺🇸🇬🇹🇯🇵🇬🇧🇰🇷🇦🇺🇹🇭🇲🇾🇭🇰"
+        createDeckCard()
+        //emojiChoices = "🇹🇼🇺🇸🇬🇹🇯🇵🇬🇧🇰🇷🇦🇺🇹🇭🇲🇾🇭🇰"
     }
 }
 

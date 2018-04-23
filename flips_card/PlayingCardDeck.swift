@@ -25,5 +25,10 @@ struct PlayingCardDeck {
             return nil;
         }
     }
+    
+    func getPokerFace() -> [PlayingCard] {
+        return cards
+    }
 }
+
 

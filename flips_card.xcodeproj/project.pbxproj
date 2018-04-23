@@ -14,8 +14,8 @@
 		9092408820564E3400D5D385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9092408620564E3400D5D385 /* LaunchScreen.storyboard */; };
 		9092409020565AA100D5D385 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9092408F20565AA100D5D385 /* Concentration.swift */; };
 		9092409220565B8600D5D385 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9092409120565B8600D5D385 /* Card.swift */; };
-		90F104B120846D3500A629DC /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F104B020846D3500A629DC /* PlayingCard.swift */; };
-		90F104B32084789700A629DC /* PlayCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F104B22084789700A629DC /* PlayCardDeck.swift */; };
+		90C650852088C2D300660EDC /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C650832088C2D300660EDC /* PlayingCard.swift */; };
+		90C650862088C2D300660EDC /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C650842088C2D300660EDC /* PlayingCardDeck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		9092408920564E3400D5D385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9092408F20565AA100D5D385 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		9092409120565B8600D5D385 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		90F104B020846D3500A629DC /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
-		90F104B22084789700A629DC /* PlayCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayCardDeck.swift; sourceTree = "<group>"; };
+		90C650832088C2D300660EDC /* PlayingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		90C650842088C2D300660EDC /* PlayingCardDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +62,8 @@
 		9092407C20564E3400D5D385 /* flips_card */ = {
 			isa = PBXGroup;
 			children = (
+				90C650832088C2D300660EDC /* PlayingCard.swift */,
+				90C650842088C2D300660EDC /* PlayingCardDeck.swift */,
 				9092407D20564E3400D5D385 /* AppDelegate.swift */,
 				9092407F20564E3400D5D385 /* ViewController.swift */,
 				9092408120564E3400D5D385 /* Main.storyboard */,
@@ -70,8 +72,6 @@
 				9092408920564E3400D5D385 /* Info.plist */,
 				9092408F20565AA100D5D385 /* Concentration.swift */,
 				9092409120565B8600D5D385 /* Card.swift */,
-				90F104B020846D3500A629DC /* PlayingCard.swift */,
-				90F104B22084789700A629DC /* PlayCardDeck.swift */,
 			);
 			path = flips_card;
 			sourceTree = "<group>";
@@ -148,10 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90F104B120846D3500A629DC /* PlayingCard.swift in Sources */,
+				90C650852088C2D300660EDC /* PlayingCard.swift in Sources */,
 				9092409020565AA100D5D385 /* Concentration.swift in Sources */,
-				90F104B32084789700A629DC /* PlayCardDeck.swift in Sources */,
 				9092408020564E3400D5D385 /* ViewController.swift in Sources */,
+				90C650862088C2D300660EDC /* PlayingCardDeck.swift in Sources */,
 				9092407E20564E3400D5D385 /* AppDelegate.swift in Sources */,
 				9092409220565B8600D5D385 /* Card.swift in Sources */,
 			);
