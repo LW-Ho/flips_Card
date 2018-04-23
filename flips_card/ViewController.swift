@@ -144,6 +144,7 @@ class ViewController: UIViewController {
     //private let pokercards = [PlayingCard]()
     private func createDeckCard(){
         //deck.draw()
+<<<<<<< HEAD
         for _ in 1...12 {
             if let deckcard = deck.draw() {
                 pokerFaceCard.append(String(describing: deckcard))
@@ -152,10 +153,17 @@ class ViewController: UIViewController {
         print(pokerFaceCard)
         print(pokerCards.count)
         //print(emojiChoices)
+=======
+        pokerCards = deck.getPokerFace()
+        
+        print(pokerCards.count)
+        print(emojiChoices)
+>>>>>>> cbefe9c4358f58ebf423973705ea9890dc663da9
     }
     
     private var emoji = [Card:String] ()
 
+<<<<<<< HEAD
 //    private func emoji(for card: Card) -> String {
 //        if pokerCards.count > 0 { //, emoji[card] == nil{ // , == &&
 //            let stringIndex = pokerCards.index(pokerCards.startIndex, offsetBy: pokerCards.count.arc4Random)
@@ -163,6 +171,23 @@ class ViewController: UIViewController {
 //        }
 //        return  emoji[card] ?? "?"
 //    }
+    
+//    private func emoji(for card: Card) -> String {
+//            if emojiChoices.count > 0, emoji[card] == nil{ // , == &&
+//                let stringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4Random)
+//                emoji[card] = String(emojiChoices.remove(at: stringIndex))
+//            }
+//        return  emoji[card] ?? "?"
+//    }
+=======
+    private func emoji(for card: Card) -> String {
+        if pokerCards.count > 0 { //, emoji[card] == nil{ // , == &&
+            let stringIndex = pokerCards.index(pokerCards.startIndex, offsetBy: pokerCards.count.arc4Random)
+            emoji[card] = String(describing: pokerCards.remove(at: stringIndex))
+        }
+        return  emoji[card] ?? "?"
+    }
+>>>>>>> cbefe9c4358f58ebf423973705ea9890dc663da9
     
 //    private func emoji(for card: Card) -> String {
 //            if emojiChoices.count > 0, emoji[card] == nil{ // , == &&

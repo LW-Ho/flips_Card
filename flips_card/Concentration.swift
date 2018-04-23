@@ -13,9 +13,6 @@ class Concentration {
     private(set) var cards = [Card]();
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
-//            let faceUpCardIndices = cards.indices.filter {cards[$0].isFaceUp }
-//            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
-            
             //return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
             var foundIndex: Int?
             for index in cards.indices {
